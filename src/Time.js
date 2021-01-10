@@ -1,38 +1,39 @@
 import React from "react";
-
-const name = {
-  1: "One",
-  2: "two",
-  3: "Three",
-  4: "Four",
-  5: "Five",
-  6: "Six",
-  7: "Seven",
-  8: "Eight",
-  9: "Nine",
-  10: "Ten",
-  11: "Eleven",
-  12: "Twelve",
-};
+import Name from "./String_Obj";
 
 class Time extends React.Component {
   constructor(props) {
     super(props);
     const datetime = new Date();
     this.state = { minutes: datetime.getMinutes(), hour: datetime.getHours() };
-  }
 
-  render() {
-    Object.entries(name).forEach((entry) => {
+    Object.entries(Name.name).forEach((entry) => {
       const [key, value] = entry;
+      console.log(this.state.hour.toLocaleString());
       if (key === this.state.hour.toLocaleString()) {
         this.setState({
           hour: value,
         });
+        console.log(value);
       } else {
-        console.log("needs to be standard time");
+        console.log(key);
       }
     });
+  }
+
+  render() {
+    // Object.entries(Name.minute).forEach((entry) => {
+    //   let answer;
+    //   const [key, value] = entry;
+    //   console.log(this.state.minutes.toLocaleString());
+    //   if (key === this.state.minutes.toLocaleString()) {
+    //     answer = key;
+    //   } else {
+    //     console.log("x");
+    //   }
+    //   this.setState({ minutes: answer });
+    // });
+
     return (
       <div>
         <p>{this.state.hour.toLocaleString()}</p>
