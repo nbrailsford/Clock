@@ -9,11 +9,4 @@ function App() {
   );
 }
 
-let date = new Date();
-let hour = date.getHours();
-let minute = date.getMinutes();
-
-console.log(hour);
-console.log(minute);
-
 export default App;

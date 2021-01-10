@@ -1,0 +1,26 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20vh;
+  font-family: "Audiowide", cursive;
+  font-size: 50px;
+}
+
+.darkModeOn {
+  background-color: black;
+  width: 50vw;
+}
+
+#hour {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 200px;
+}
+
+#minutes {
+  position: absolute;
+  margin-top: -60px;
+  margin-left: 70px;
+}

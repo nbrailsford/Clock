@@ -1,5 +1,5 @@
 let Name = {
-  name: {
+  hour: {
     1: "One",
     2: "two",
     3: "Three",
@@ -12,8 +12,10 @@ let Name = {
     10: "Ten",
     11: "Eleven",
     12: "Twelve",
+    13: "Thirteen",
   },
   minute: {
+    0: "",
     1: "Oh One",
     2: "Oh Two",
     3: "Oh Three",
