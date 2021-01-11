@@ -13,34 +13,65 @@ class Time extends React.Component {
   }
 
   componentDidMount() {
-    let hourOutput = "";
-    let minuteOutput = "";
-
-    this.interval = setInterval(() => {
-      checkHour(this.state.hour);
-      checkMinute(this.state.minutes);
-      this.setState({ hour: hourOutput, minutes: minuteOutput });
-    }, 5000);
-
-    function checkMinute(state) {
-      console.log("minute function ran");
+    let checkMinute = () => {
+      let time = new Date().getMinutes().toLocaleString();
       Object.entries(Name.minute).forEach((entry) => {
         const [key, value] = entry;
-        if (key === state) {
-          hourOutput = value;
+        if (key === time) {
+          this.setState({
+            minutes: value,
+          });
         }
       });
-    }
+    };
 
-    function checkHour(state) {
+    let checkHour = () => {
+      let time = new Date().getHours().toLocaleString();
       Object.entries(Name.hour).forEach((entry) => {
         const [key, value] = entry;
-        if (key === state) {
-          minuteOutput = value;
+        if (key === time) {
+          this.setState({
+            hour: value,
+          });
         }
       });
-    }
+    };
+    this.interval = setInterval(() => {
+      checkPositioning();
+      changeHour();
+      this.setState(checkMinute(this.state.minutes));
+      this.setState(checkHour(this.state.hour));
+    }, 5000);
+
+    // hour and minute positioning
+    let changeHour = () => {
+      let time = new Date().getHours().toLocaleString();
+      Object.entries(Name.hour).forEach((entry) => {
+        const [key, value] = entry;
+        if (time === (30 || 45 || 50 || 55)) {
+          console.log(key - 1);
+          this.setState({
+            hour: value,
+          });
+        }
+      });
+    };
+
+    let checkPositioning = () => {
+      let checkTime = this.state.minutes;
+      if (checkTime === 30 || (checkTime > 9 && checkTime < 20)) {
+        document.querySelector("#minutes").classList.add("top");
+        document.querySelector("#hour").classList.add("bottom");
+      } else if (checkTime === 45 || checkTime === 50 || checkTime === 55) {
+        document.querySelector("#minutes").classList.add("top");
+        document.querySelector("#hour").classList.add("bottom");
+      } else {
+        document.querySelector("#minutes").classList.add("bottom");
+        document.querySelector("#hour").classList.add("top");
+      }
+    };
   }
+
   componentWillUnmount() {
     clearInterval(this.interval);
   }

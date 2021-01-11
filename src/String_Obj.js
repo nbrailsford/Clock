@@ -25,6 +25,7 @@ let Name = {
     7: "Oh Seven",
     8: "Oh Eight",
     9: "Oh Nine",
+    //^^ after hour
     10: "Ten After",
     11: "Eleven After",
     12: "Twelve After",
@@ -35,6 +36,7 @@ let Name = {
     17: "Seventeen After",
     18: "Eighteen After",
     19: " Nineteen After",
+    //^^ before hour
     20: "Twenty",
     21: "Twenty One",
     22: "Twenty Two",
@@ -43,7 +45,9 @@ let Name = {
     27: "Twenty Seven",
     28: "Twenty Eight",
     29: "Twenty Nine",
+    //^^ after hour
     30: "Half Past",
+    //^^ before hour
     31: "Thirty One",
     32: "Thirty Two",
     33: "Thirty Three",
@@ -58,21 +62,28 @@ let Name = {
     42: "Forty Two",
     43: "Forty Three",
     44: "Forty Four",
+    //^^ after hour
     45: "Quarter Till",
+    //^^ before hour and -1 hour
     46: "Forty Six",
     47: "Forty Seven",
     48: "Forty Eight",
     49: "Forty Nine",
+    //^^ after hour
     50: "Ten Till",
+    //^^before hour and -1 hour
     51: "Fifty One",
     52: "Fifty Two",
     53: "Fifty Three",
     54: "Fifty Four",
+    //^^ after hour
     55: "Five Till",
+    // before hour and -1 hour
     56: "Fifty Six",
     57: "Fifty Seven",
     58: "Fifty Eight",
     59: "Fifty Nine",
+    //^^after hour
   },
 };
 

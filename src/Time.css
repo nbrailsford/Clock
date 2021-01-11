@@ -1,9 +1,15 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .clock {
   display: flex;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  margin-top: 20vh;
+  margin-top: 40vh;
+  margin-left: 15vw;
   font-family: "Audiowide", cursive;
   font-size: 50px;
 }
@@ -15,12 +21,22 @@
 
 #hour {
   position: absolute;
-  margin-top: 60px;
-  margin-left: 200px;
+  left: 20px;
 }
 
 #minutes {
   position: absolute;
-  margin-top: -60px;
-  margin-left: 70px;
+  left: 80px;
+}
+
+.top {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+
+.bottom {
+  position: absolute;
+  top: 10px;
+  left: 145px;
 }
