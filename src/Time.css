@@ -15,6 +15,10 @@
   color: white;
 }
 
+p {
+  letter-spacing: 10px;
+}
+
 #hour {
   position: absolute;
   left: 180px;
@@ -42,7 +46,14 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
+    top: -100px;
+    right: -40px;
   }
+
+  p {
+    letter-spacing: 3px;
+  }
+
   #past {
     position: relative;
     left: -30%;
